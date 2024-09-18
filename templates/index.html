@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llama3.1 聊天機器人</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        #chat-container {
+            border: 1px solid #ccc;
+            height: 400px;
+            overflow-y: scroll;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        #user-input {
+            width: 70%;
+            padding: 5px;
+        }
+
+        #send-button {
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>聊天機器人</h1>
+    <div id="chat-container"></div>
+    <input type="text" id="user-input" placeholder="輸入您的訊息...">
+    <button id="send-button">發送</button>
+
+    <script>
+        $(document).ready(function () {
+            $('#send-button').click(sendMessage);
+            $('#user-input').keypress(function (e) {
+                if (e.which == 13) sendMessage();
+            });
+
+            function sendMessage() {
+                var message = $('#user-input').val();
+                if (message.trim() === '') return;
+
+                $('#chat-container').append('<p><strong>您:</strong> ' + message + '</p>');
+                $('#user-input').val('');
+
+                $.ajax({
+                    url: '/chat',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ message: message }),
+                    success: function (response) {
+                        $('#chat-container').append('<p><strong>機器人:</strong> ' + response.response + '</p>');
+                        $('#chat-container').scrollTop($('#chat-container')[0].scrollHeight);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
