@@ -1,5 +1,5 @@
 # localGPT
-這是個可以在完全沒有網絡下的全本地化 AI 聊天機器人
+在沒有網絡的情況下仍然運作的 AI 聊天機器人
 
 ![ui](https://github.com/user-attachments/assets/d5b2e6eb-9a43-40ac-9bf5-6c8cc5458c24)
 
@@ -8,7 +8,7 @@
 
 Win or Mac
 
-Ollama
+Ollama （簡易安裝方法)
 
 Llama3.1:latest 模型 或任何 Ollama 支持的 LLM
 
