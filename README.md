@@ -12,7 +12,7 @@ Ollama
 
 Llama3.1:latest 模型 或任何 Ollama 支持的 LLM
 
-安裝
+安裝：
 
 git clone https://github.com/elbartohub/localGPT
 
@@ -23,4 +23,4 @@ pip install -r requirements.txt
 python app.py
 
 
-所有提示都會被紀錄到 prompt.txt 中。
+所自動將 Prompt 存檔為 prompt.txt。
