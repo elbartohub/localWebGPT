@@ -14,7 +14,7 @@ Llama3.1:latest 模型 或任何 Ollama 支持的 LLM
 
 安裝：
 
-git clone https://github.com/elbartohub/localGPT
+git clone https://github.com/elbartohub/localWebGPT
 
 cd localGPT
 
