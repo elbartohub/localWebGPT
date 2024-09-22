@@ -1,5 +1,5 @@
 # localWebGPT
-無需網絡運作的 AI 聊天機器人
+無需連網，使用任何瀏灠器的 AI 聊天機器人
 
 ![ui](https://github.com/user-attachments/assets/d5b2e6eb-9a43-40ac-9bf5-6c8cc5458c24)
 
