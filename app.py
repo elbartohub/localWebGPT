@@ -8,8 +8,8 @@ from langchain_core.runnables import RunnablePassthrough
 from datetime import datetime
 import os
 
-# 初始化 Ollama 模型，使用 "llama3:latest" 版本
-llm = Ollama(model="llama3.1:latest")
+# 初始化 Ollama 模型，使用 "llama3.2:latest" 版本
+llm = Ollama(model="llama3.2:latest")
 
 # 創建記憶組件
 memory = ConversationBufferMemory(return_messages=True)
