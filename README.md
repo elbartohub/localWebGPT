@@ -10,7 +10,7 @@ Win or Mac
 
 安裝任何版本 Ollama （簡易安裝方法)
 
-Llama3.1:latest 模型 或任何 Ollama 支持的 LLM
+Llama3.2:latest 模型 或任何 Ollama 支持的 LLM
 
 安裝：
 
