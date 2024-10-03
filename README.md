@@ -3,7 +3,8 @@ LocalWebGPT
 
 一、 項目目標
 
-localWebGPT 項目旨在創建一個無需聯網的本地 Llama 3.2 AI 聊天機器人，用戶在沒有網絡連接的情況下也能使用大型語言模型進行對話。
+localWebGPT 項目旨在創建一個無需聯網的本地 Llama 3.2 AI 聊天機器人，
+用戶在沒有網絡連接的情況下也能使用大型語言模型進行對話。
 
 二、 主要功能
 
@@ -47,22 +48,27 @@ with gr.Blocks() as demo:
 gr.ChatInterface(
 fn=chat,
 title="Llama 3 聊天機器人",
-description="這是一個使用 Llama 3 模型的簡單聊天機器人。所有的提示都會被保存到 prompt.txt 文件中。機器人會使用繁體中文回覆，並且能夠記住對話歷史。",
+description="這是一個使用 Llama 3 模型的簡單聊天機器人。所有的提示都會被保存到 prompt.txt 文件中。
+機器人會使用繁體中文回覆，並且能夠記住對話歷史。",
 examples=["你好，你是誰？", "請告訴我一些關於人工智能的知識。", "你能寫一首短詩嗎？"],
 theme="soft"
 )
 使用 Gradio 庫創建用戶友好的聊天界面，並提供一些示例問題。
 提示保存:
-def save_prompt(message):
-mode = 'a' if os.path.exists("prompt.txt") else 'w'
-with open("prompt.txt", mode, encoding="utf-8") as file:
-timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-file.write(f"{timestamp}: {message}\n\n")
+  def save_prompt(message):
+  mode = 'a' if os.path.exists("prompt.txt") else 'w'
+  with open("prompt.txt", mode, encoding="utf-8") as file:
+  timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+  file.write(f"{timestamp}: {message}\n\n")
+  
 定義 save_prompt 函數，將用戶輸入的提示信息保存到 "prompt.txt" 文件中。
   
 四、 總結
 
-localWebGPT 項目提供了一個簡單易用的本地 LLM AI 聊天機器人解決方案。它結合了 Ollama, Langchain 和 Gradio 等工具的優勢，實現了模型加載、對話管理、界面構建和數據保存等功能。該項目對於希望在離線環境下使用 LLM 進行實驗和開發的用戶非常有價值。
+localWebGPT 項目提供了一個簡單易用的本地 LLM AI 聊天機器人解決方案。
+它結合了 Ollama, Langchain 和 Gradio 等工具，
+實現了模型加載、對話管理、界面構建和數據保存等功能。
+該項目對於希望在離線環境下使用 LLM 進行實驗和開發。
 </pre>
 
 ![ui](https://github.com/user-attachments/assets/d5b2e6eb-9a43-40ac-9bf5-6c8cc5458c24)
