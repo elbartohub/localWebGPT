@@ -63,10 +63,11 @@ file.write(f"{timestamp}: {message}\n\n")
 四、 總結
 
 localWebGPT 項目提供了一個簡單易用的本地 LLM AI 聊天機器人解決方案。它結合了 Ollama, Langchain 和 Gradio 等工具的優勢，實現了模型加載、對話管理、界面構建和數據保存等功能。該項目對於希望在離線環境下使用 LLM 進行實驗和開發的用戶非常有價值。
+</pre>
 
 ![ui](https://github.com/user-attachments/assets/d5b2e6eb-9a43-40ac-9bf5-6c8cc5458c24)
 
-
+<pre>
 系統需求：
 
 Win or Mac
