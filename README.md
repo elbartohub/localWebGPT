@@ -4,7 +4,7 @@ LocalWebGPT
 一、 項目目標
 
 localWebGPT 項目旨在創建一個無需聯網的本地 Llama 3.2 AI 聊天機器人，
-用戶在沒有網絡連接的情況下也能使用大型語言模型進行對話。
+用戶在沒有網絡的情況下也能透過 Web 介面使用大型語言模型進行對話。
 
 二、 主要功能
 
@@ -44,15 +44,17 @@ history=lambda x: memory.load_memory_variables({})["history"]
 調用 llm 模型進行推理。
 使用 StrOutputParser 解析模型輸出。
 聊天界面:
-with gr.Blocks() as demo:
-gr.ChatInterface(
-fn=chat,
-title="Llama 3 聊天機器人",
-description="這是一個使用 Llama 3 模型的簡單聊天機器人。所有的提示都會被保存到 prompt.txt 文件中。
-機器人會使用繁體中文回覆，並且能夠記住對話歷史。",
-examples=["你好，你是誰？", "請告訴我一些關於人工智能的知識。", "你能寫一首短詩嗎？"],
-theme="soft"
+  
+  with gr.Blocks() as demo:
+  gr.ChatInterface(
+  fn=chat,
+  title="Llama 3 聊天機器人",
+  description="這是一個使用 Llama 3 模型的簡單聊天機器人。所有的提示都會被保存到 prompt.txt 文件中。
+  機器人會使用繁體中文回覆，並且能夠記住對話歷史。",
+  examples=["你好，你是誰？", "請告訴我一些關於人工智能的知識。", "你能寫一首短詩嗎？"],
+  theme="soft"
 )
+  
 使用 Gradio 庫創建用戶友好的聊天界面，並提供一些示例問題。
 提示保存:
   def save_prompt(message):
